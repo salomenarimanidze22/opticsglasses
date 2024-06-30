@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-5 text-center">Product Registration Form</h2>
+    <form method="POST" class="form-register" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <br>
+        <div class="form-group">
+            {{ form.name.label(class="form-control-label") }}
+            {{ form.name(class="form-control", placeholder="Product Name") }}
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="myFile">Product Image</label>
+            <input type="file" class="form-control-file" id="myFile" name="file">
+        </div>
+        <br>
+        <div class="form-group">
+            {{ form.price.label(class="form-control-label") }}
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">₾</span>
+                </div>
+                {{ form.price(class="form-control", placeholder="Product Price") }}
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <br>
+</div>
+{% endblock %}
